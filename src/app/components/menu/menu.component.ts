@@ -23,6 +23,10 @@ export class MenuComponent implements OnInit {
   }
 
   selectedComponent(id: number){
+    for(let menuItem of this.menuList){
+      menuItem.selected = id === menuItem.id;
+    }    
+
     this.selectMenuItem.emit(id);
   }
 
