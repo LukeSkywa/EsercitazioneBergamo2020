@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { MenuItem } from 'src/app/models/menu-item.interface';
 
 @Component({
@@ -7,6 +7,9 @@ import { MenuItem } from 'src/app/models/menu-item.interface';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
+
+  @Output()
+  selectMenuItem: EventEmitter<number> = new EventEmitter<number>();
 
   menuList: MenuItem[] = [
     { id: 1, description: 'Home', selected: true},
@@ -17,6 +20,10 @@ export class MenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  selectedComponent(id: number){
+    this.selectMenuItem.emit(id);
   }
 
 }
