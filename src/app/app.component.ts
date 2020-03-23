@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'EsercitazioneBergamo2020';
+  componentToShow: number = 1;
+
 }
